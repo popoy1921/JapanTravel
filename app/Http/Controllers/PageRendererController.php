@@ -13,6 +13,19 @@ class PageRendererController extends Controller
      */
     public function showHomePage() : View
     {
-        return view('Home.HomePage');
+        return view('Home.HomePage', array('homePageSelected' => true));
+    }
+    
+    /**
+     * Render Weather page
+     * 
+     * @return View
+     */
+    public function showWeatherPage() : View
+    {
+        $aPageDetails = array();
+        $aPageDetails['cities'] = config('constants.cities');
+        $aPageDetails['weatherPageSelected'] = true;
+        return view('Weather.WeatherPage', $aPageDetails);
     }
 }
