@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageRendererController::class, 'showHomePage'])->name('home');
+Route::get('/weather', [PageRendererController::class, 'showWeatherPage'])->name('weather');
