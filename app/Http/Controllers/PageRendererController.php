@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Redirect;
 
 class PageRendererController extends Controller
 {
+    /**
+     * List of Cities
+     * 
+     * @var array
+     */
+    private array $aCities = [];
+
     /**
      * Render Home page
      * 
@@ -27,5 +36,29 @@ class PageRendererController extends Controller
         $aPageDetails['cities'] = config('constants.cities');
         $aPageDetails['weatherPageSelected'] = true;
         return view('Weather.WeatherPage', $aPageDetails);
+    }
+
+    /**
+     * Set values for $aCities property from constants
+     * 
+     * @return void
+     */
+    private function getCities() : void
+    {
+        $this->aCities = config('constants.cities');
+    }
+    
+    /**
+     * Render Weather page
+     * 
+     * @return View|Redirect
+     */
+    public function showVenuePage() : View|RedirectResponse
+    {
+        $aPageDetails = array();
+        $this->getCities();
+        $aPageDetails['cities'] = $this->aCities;
+        $aPageDetails['venuePageSelected'] = true;
+        return view('Venue.VenuePage', $aPageDetails);
     }
 }

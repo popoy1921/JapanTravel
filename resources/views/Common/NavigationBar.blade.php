@@ -20,7 +20,11 @@
           @endif
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tourist Spots</a>
+          @isset($venuePageSelected)
+            <a class="nav-link active" aria-current="page" href="{{ route('venue') }}">Tourist Spots</a>
+          @else
+            <a class="nav-link" href="{{ route('venue') }}">Tourist Spots</a>
+          @endif
         </li>
       </ul>
     </div>
