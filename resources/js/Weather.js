@@ -1,5 +1,3 @@
-const { contains } = require("jquery");
-
 // Table header for key, Object Key for value
 const oWeatherDependentRows = {
     'Rain(3h) in mm'               : 'rain.3h',

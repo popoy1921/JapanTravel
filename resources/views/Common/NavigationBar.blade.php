@@ -26,19 +26,31 @@
               Tourist Spots
             </a>
             <ul class="dropdown-menu venue-category" data-category="{{ $category }}">
-              <li>
-                <a class="nav-link dropdown-item {{ $category === 'hotel' ? 'active' : '' }}" href="{{ route('venue', ['category' => 'hotel']) }}">
-                  Hotels
+              <li class="pt-1 px-2">
+                <a class="nav-link dropdown-item" href="{{ route('venue', ['category' => 'hotel']) }}">
+                  @if ($category === 'hotel')
+                    <b>Hotels</b>
+                  @else
+                    Hotels
+                  @endif  
                 </a>
               </li>
-              <li>
-                <a class="nav-link dropdown-item {{ $category === 'restaurant' ? 'active' : '' }}" href="{{ route('venue', ['category' => 'restaurant']) }}">
-                  Restaurants
+              <li class="pt-1 px-2">
+                <a class="nav-link dropdown-item" href="{{ route('venue', ['category' => 'restaurant']) }}">
+                  @if ($category === 'restaurant')
+                    <b>Restaurants</b>
+                  @else
+                    Restaurants
+                  @endif  
                 </a>
               </li>
-              <li>
-                <a class="nav-link dropdown-item {{ $category === 'attraction' ? 'active' : '' }}" href="{{ route('venue', ['category' => 'attraction']) }}">
-                  Attractions
+              <li class="pt-1 px-2">
+                <a class="nav-link dropdown-item" href="{{ route('venue', ['category' => 'attraction']) }}">
+                  @if ($category === 'attraction')
+                    <b>Attractions</b>
+                  @else
+                    Attractions
+                  @endif  
                 </a>
               </li>
             </ul>
@@ -49,17 +61,17 @@
               Tourist Spots
             </a>
             <ul class="dropdown-menu venue-category">
-              <li>
+              <li class="pt-1 px-2">
                 <a class="nav-link dropdown-item" href="{{ route('venue', ['category' => 'hotel']) }}">
                   Hotels
                 </a>
               </li>
-              <li>
+              <li class="pt-1 px-2">
                 <a class="nav-link dropdown-item" href="{{ route('venue', ['category' => 'restaurant']) }}">
                   Restaurants
                 </a>
               </li>
-              <li>
+              <li class="pt-1 px-2">
                 <a class="nav-link dropdown-item" href="{{ route('venue', ['category' => 'attraction']) }}">
                   Attractions
                 </a>
