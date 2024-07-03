@@ -34,6 +34,7 @@ class PageRendererController extends Controller
     {
         $aPageDetails = array();
         $this->getCities();
+        $aPageDetails['cities'] = $this->aCities;
         $aPageDetails['weatherPageSelected'] = true;
         return view('Weather.WeatherPage', $aPageDetails);
     }

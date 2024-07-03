@@ -1,12 +1,14 @@
+const { contains } = require("jquery");
+
 // Table header for key, Object Key for value
 const oWeatherDependentRows = {
-    'Rain(3h) in mm'    : 'rain.3h',
-    'Rain(1h) in mm'    : 'rain.1h',
-    'Snow(3h) in mm'    : 'snow.3h',
-    'Snow(1h) in mm'    : 'snow.1h',
-    'Temperature'       : 'main.temp',
-    'Max Temperature'   : 'main.temp_max',
-    'Min Temperature'   : 'main.temp_min'
+    'Rain(3h) in mm'               : 'rain.3h',
+    'Rain(1h) in mm'               : 'rain.1h',
+    'Snow(3h) in mm'               : 'snow.3h',
+    'Snow(1h) in mm'               : 'snow.1h',
+    'Temperature in celsius'       : 'main.temp',
+    'Max Temperature in celsius'   : 'main.temp_max',
+    'Min Temperature in celsius'   : 'main.temp_min'
 }
 
 $('.weather-city').on('change', function() {
