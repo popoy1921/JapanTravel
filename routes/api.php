@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/weather/city/{city}', [WeatherController::class, 'getWeatherCity']);
+Route::get('/weather/{city}', [WeatherController::class, 'getWeatherCity']);
 
 Route::prefix('/venue')->group(function () {
     Route::get('/hotel/getList/{city}', [VenueController::class, 'getHotelList']);
