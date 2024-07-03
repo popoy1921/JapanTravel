@@ -33,7 +33,7 @@ class PageRendererController extends Controller
     public function showWeatherPage() : View
     {
         $aPageDetails = array();
-        $aPageDetails['cities'] = config('constants.cities');
+        $this->getCities();
         $aPageDetails['weatherPageSelected'] = true;
         return view('Weather.WeatherPage', $aPageDetails);
     }

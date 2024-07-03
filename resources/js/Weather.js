@@ -9,15 +9,15 @@ const oWeatherDependentRows = {
     'Min Temperature'   : 'main.temp_min'
 }
 
-$('.weatherCity').on('change', function() {
+$('.weather-city').on('change', function() {
     let sCity = $(this).val();
     if (sCity === '') {
         $('.content table').remove();
         return false;
     }
-    axios.get('/api/weather/city/' + sCity).then(response => {
-        let responseDate = response.data.data;
-        resetDataTable(responseDate)
+    axios.get('/api/weather/' + sCity).then(response => {
+        let responseData = response.data.data;
+        resetDataTable(responseData)
     }).catch(error => {
         console.error('There was an error!', error);
     });

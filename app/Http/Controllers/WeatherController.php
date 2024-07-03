@@ -24,7 +24,7 @@ class WeatherController extends Controller
     }
 
     /**
-     * method to get the weather of a give city
+     * Get Weather information about the city
      * @param string $sCity
      * 
      * @return array
