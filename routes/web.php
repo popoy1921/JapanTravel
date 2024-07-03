@@ -17,6 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageRendererController::class, 'showHomePage'])->name('home');
 Route::get('/weather', [PageRendererController::class, 'showWeatherPage'])->name('weather');
-Route::get('/venue', [PageRendererController::class, 'showVenuePage'])->name('venue');
-
-Route::get('login/foursquare', [SocialiteController::class, 'redirectToFoursquare'])->name('foursquare');
+Route::get('/venue/{category}', [PageRendererController::class, 'showVenuePage'])->name('venue');

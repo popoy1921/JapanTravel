@@ -26,16 +26,18 @@ class VenueService extends BaseApiService
      * 
      * @return array
      */
-    public function getVenueCity(string $sCity) : array
+    public function getVenueList(string $sCity, string $sCategories) : array
     {
         if (in_array($sCity, config('constants.cities')) === false) {
             return array(
                 'code'    => '511',
-                'message' => 'City indicated is not supported by the application.' 
+                'message' => 'City indicated is not supported by the application.'
             );
         }
         $aQueryParams = array(
-            'near'     => $sCity
+            'near'       => $sCity,
+            'categories' => $sCategories,
+            'limit'      => config('constants.fourSquareLimit')
         );
         return $this->executeGetRequest('search', $aQueryParams);
     }

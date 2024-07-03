@@ -53,12 +53,13 @@ class PageRendererController extends Controller
      * 
      * @return View|Redirect
      */
-    public function showVenuePage() : View|RedirectResponse
+    public function showVenuePage(string $sCategory) : View|RedirectResponse
     {
         $aPageDetails = array();
         $this->getCities();
         $aPageDetails['cities'] = $this->aCities;
         $aPageDetails['venuePageSelected'] = true;
+        $aPageDetails['category'] = $sCategory;
         return view('Venue.VenuePage', $aPageDetails);
     }
 }

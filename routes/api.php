@@ -24,9 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/weather/city/{city}', [WeatherController::class, 'getWeatherCity']);
 
 Route::prefix('/venue')->group(function () {
-    Route::get('/search/{city}', [VenueController::class, 'getVenueCity']);
+    Route::get('/hotel/getList/{city}', [VenueController::class, 'getHotelList']);
+    Route::get('/restaurant/getList/{city}', [VenueController::class, 'getRestaurantList']);
+    Route::get('/attraction/getList/{city}', [VenueController::class, 'getAttractionList']);
 });
-
-
-Route::get('login/foursquare/callback', );
 
