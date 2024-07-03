@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\PageRendererController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageRendererController::class, 'showHomePage'])->name('home');
 Route::get('/weather', [PageRendererController::class, 'showWeatherPage'])->name('weather');
+Route::get('/venue/{category}', [PageRendererController::class, 'showVenuePage'])->name('venue');
